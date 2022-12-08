@@ -176,10 +176,13 @@ se tiver 4 propriedades - top - right - bottom - left
   text-align: center;
 }
 
+
+/* responsividade */
 @media (max-width: 900px) {
   #page-home {
     background-position: 70vw;
   }
+
 
   .content {
     align-items: center;
@@ -189,9 +192,11 @@ se tiver 4 propriedades - top - right - bottom - left
   #page-home header a {
     position: absolute;
     bottom: 48px;
-    left: 50% tranform: translateX(-50%)
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   #page-home main {
     align-items: center;
   }
+}
