@@ -1,0 +1,197 @@
+/* format */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* dessa forma se cria um atalho para algo utilizado várias vezes, permitindo a mudança de cor de várias partes da página de uma*/
+:root {
+  --title-color: #322153
+}
+
+:root {
+  --primary-color: #34CB79
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #f0f0f5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* dessa forma todos os elementos a não terão o sublinhado */
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--title-color);
+}
+
+/*
+  box model
+  - toda caixa tem: largura, espaçamento, preenchimento, borda, cor, fundo, alinhamentos, maneira que é vista pelo html (display), posicionamento
+
+  display: block e inline (para caixas do lado de fora)
+  flex: um elemento ao lado do outro
+
+  f12 na página
+ - com element style testar estilos
+
+  block ocupa toda a linha
+  inline apenas o espaço do item (colocar uma caixa ao lado da outra)
+*/
+
+header {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*
+porcentagem fica inteligente (responsivo)
+
+quando tem dois valores no caso do margin, o primeiro sera o top e bottom, já o segundo será right e left - -
+
+se tiver três valores, o primeiro será top, segundo right e left, e o terceiro bottom
+
+se tiver 4 propriedades - top - right - bottom - left
+(ordem de relógio)
+*/
+
+.content {
+  width: 90%;
+  height: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#page-home {
+  height: 100vh;
+  background: url('../assets/home-background.svg') no-repeat;
+  background-position: 35vw bottom;
+}
+
+.cadastro {
+  display: flex;
+  color: var(--title-color);
+  font-weight: 700;
+}
+
+.log-in {
+  display: flex;
+  background-image: url(../assets/log-in.svg);
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+}
+
+/* display flex deixa lado a lado, porém o flex direction column empilha um abaixo do outro */
+
+.container {
+  max-width: 560px;
+  height: 600px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 54px;
+}
+
+.slogan {
+  font-size: 24px;
+  line-height: 38px;
+  margin-top: 24px;
+}
+
+/* transition deixa mais bonito a transição da cor do hover 
+   border radius arredondar o botão
+*/
+
+.button {
+  width: 100%;
+  max-width: 360px;
+  height: 72px;
+  background: var(--primary-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  transition: 400ms;
+
+}
+
+/* hover serve para quando o mouse estiver em cima, alterar a cor */
+
+.button:hover {
+  background-color: #2fb86e;
+}
+
+/* 0 a 255 para cada um do rgb 
+  alfa = transparência 
+*/
+
+.search {
+  width: 72px;
+  height: 72px;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PSEUDOELEMENTO AFTER, para colocar uma imagem de fundo */
+.search::after {
+  content: "";
+  background-image: url(../assets/search.svg);
+  width: 20px;
+  height: 20px;
+}
+
+#page-home .container a strong {
+  color: white;
+  flex: 1;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  #page-home {
+    background-position: 70vw;
+  }
+
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+
+  #page-home header a {
+    position: absolute;
+    bottom: 48px;
+    left: 50% tranform: translateX(-50%)
+  }
+
+  #page-home main {
+    align-items: center;
+  }
