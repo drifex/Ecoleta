@@ -1,2 +1,2 @@
 # Ecoleta
-Training
+site de coleta de resíduos
